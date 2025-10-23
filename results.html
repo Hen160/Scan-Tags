@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Results</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    
+    .back-arrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 8px 15px;
+      background: white;
+      color: #03B185;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      border-radius: 6px;
+    }
+
+img {
+  display: block;            /* makes each image take up its own line */
+  width: 80%;                /* size relative to container width (adjust as needed) */
+  max-width: 600px;          /* prevents them from getting too big on wide screens */
+  margin: 100px auto;         /* centers and adds spacing */
+  border-radius: 10px;       /* rounded corners */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* subtle shadow */
+}
+
+
+#image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* center horizontally */
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0 auto;
+    max-height: 90vh;
+    overflow-y: auto;         /* allow scrolling when many images */
+    padding: 20px 0;          /* breathing room top/bottom */
+    box-sizing: border-box;
+    background: #fff;
+
+
+
+    }
+    
+
+
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-arrow">&#129144;</a>
+  
+  <div id="image-container"></div>
+
+  <script>
+    const imageMap = {
+        ld: ["./images/LD 25 Pack.jpg", "./images/LD 20 Pack.jpg"],
+      camel: ["./images/Camel Select 25 Pack.jpg", "./images/Camel 20 Pack.jpg"],
+      macdonald: ["./images/MacDonald 25 Pack.jpg", "./images/MacDonald 20 Pack.jpg"],
+      export: ["./images/Export A 25 Pack.jpg", "./images/Export A 20 Pack.jpg"],
+      next: ["./images/Next 25 Pack.jpg", "./images/Next 20 Pack.jpg"],
+      phillip_morris: ["./images/Phillip Morris 25 Pack.jpg", "./images/Phillip Morris 20 Pack.jpg"],
+      canadian_classic: ["./images/Canadian Classic 25 Pack.jpg", "./images/Canadian Classic 20 Pack.jpg"],
+      belmont: ["./images/Belmont 25 Pack.jpg"],
+      john_players: ["./images/John Players 25 Pack.jpg", "./images/John Players 20 Pack.jpg"],
+      pall_mall: ["./images/Pall Mall 25 Pack.jpg", "./images/Pall Mall 20 Pack.jpg"],
+      marlboro: ["./images/Marlboro 25 Pack.jpg", "./images/Marlboro 20 Pack.jpg"],
+      dumaurier: ["./images/DuMaurier 25 Pack.jpg", "./images/DuMaurier 20 Pack.jpg"],
+
+    };
+
+    // Get the query string, e.g. "?filters=animals,birds"
+    const params = new URLSearchParams(window.location.search);
+    const filters = params.get("filters")?.split(",") || [];
+
+    const container = document.getElementById("image-container");
+
+    if (filters.length === 0) {
+      container.innerHTML = "<p>No Products selected.</p>";
+    } else {
+      const imagesToShow = new Set();
+      filters.forEach(f => {
+        if (imageMap[f]) imageMap[f].forEach(img => imagesToShow.add(img));
+      });
+
+      imagesToShow.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        container.appendChild(img);
+      });
+    }
+  </script>
+
+</body>
+</html>

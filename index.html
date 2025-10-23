@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .quick_btn {
+    display: inline-block;
+    background: white;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+    border: 1px solid #030303;
+    }
+    .jti{
+        padding:10px
+    }
+    .rbh{
+        padding:10px
+    }
+    .imperial{
+        padding:10px
+    }
+    .quick_btn input{
+        display: none;
+        
+    }
+    
+    .flex-container{
+        display: flex;
+        justify-content: center; /* Horizontally centers content */
+        align-items: center;
+    }
+    .quick_heading{
+    text-align: center;
+}
+.code_heading{
+  text-align: center;
+}
+
+
+
+    .quick_btn.checked {
+      background-color: #03B185 ;
+      border-color: #03B185;
+      color: white;
+    }
+
+    #search-btn{
+        background-color: #03B185 ;
+        border: none;
+        padding: 8px 15px;
+        margin: 5px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 20px;
+        color: white;
+           
+    }
+    .quick_search{
+      margin-top: 50px;
+      margin-bottom: 100px;
+    }
+    #product-code{
+      display: flex;
+      font-size: 24px;
+      justify-content: center;
+    }
+    .codes{
+      display: flex;
+      justify-content: center;
+      
+    
+    }
+    .head_btn_main{
+      display: flex;
+      justify-content: center;
+
+    }
+    
+    .heading{
+      display: flex;
+      flex-direction: column ;
+      align-items: center;
+      margin-bottom: 100px;
+    }
+  
+    .head_btn {
+  display: inline-block;
+  background-color: #03B185; /* blue */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none; /* removes underline */
+  font-size: 20px;
+  transition: background-color 0.3s;
+  margin: 20px
+}
+.logo{
+  margin: 50px;
+}
+.nps{
+  margin-left: 0px;
+}
+   
+ 
+    .selected { background: lightblue; }
+    img { width: 150px; margin: 5px; }
+  
+  </style>
+</head>
+<body>
+  <div class="heading">
+    <h1>Scan Tags</h1>
+    <img class="logo" src="./images/JTI_Logo.svg">
+    <div class="head_btn_main">
+      <div>
+      <a href="./price_survey.html" class="head_btn ps">Price Survey</a>
+      </div>
+      <div>
+      <a href="./national_survey.html" class="head_btn nps">National Price Survey</a>
+      </div>
+    </div>
+  </div>
+    <h2 class="quick_heading">Quick Search </h2>
+    <hr/>
+<div class="quick_search">
+<div class="flex-container">
+    <div class="jti">
+        <label class="quick_btn"><input type= 'checkbox' data-key="ld" ><span class="text">LD</span></label>
+        <label class="quick_btn"><input type= 'checkbox' data-key="camel"><span class="text">Camel</span></label>
+        <label class="quick_btn"><input type= 'checkbox' data-key="macdonald"><span class="text">MacDonald</span></label>
+        <label class="quick_btn"><input type= 'checkbox' data-key="export"><span class="text">Export A</span></label>
+    </div>
+  </div>
+<div class="flex-container">
+    <div class="rbh">
+        <label class="quick_btn"><input type= 'checkbox' data-key="next"><span class="text">Next</span></label>
+        <label class="quick_btn"><input type= 'checkbox' data-key="phillip_morris"><span class="text">PM by Next</span></label>
+        <label class="quick_btn"><input type= 'checkbox' data-key="canadian_classic"><span class="text">Canadian Classic</span></label>
+        <label class="quick_btn"><input type= 'checkbox' data-key="belmont"><span class="text">Belmont</span></label>
+    </div>
+</div>
+<div class="flex-container">
+    <div class="imperial">
+        <label class="quick_btn"><input type= 'checkbox' data-key="john_players"><span class="text">John Players</span></label>
+        <label class="quick_btn"><input type= 'checkbox' data-key="pall_mall"><span class="text">Pall Mall</span></label>
+        <label class="quick_btn"><input type= 'checkbox' data-key="marlboro"><span class="text">Marlboro</span></label>
+        <label class="quick_btn"><input type= 'checkbox' data-key="dumaurier"><span class="text">DuMaurier</span></label>
+    </div>
+</div>
+
+<br>
+<div class="flex-container">
+<button id="search-btn">Search</button>
+</div> 
+</div> 
+<h2 class="code_heading">Product Codes</h2>
+<hr/>
+  <div id="product-code"></div>
+  <div class="codes">
+    <img class="code_format" src="./images/pack codes.jpg">
+    <img class="code_format" src="./images/pack codes2.jpg"
+  </div>
+
+
+  <script>
+    const checkboxes = document.querySelectorAll("input[type='checkbox']");
+    checkboxes.forEach(box => {
+      box.addEventListener("change", () => {
+        const label = box.closest(".quick_btn");
+        label.classList.toggle("checked", box.checked);
+      });
+    });
+
+    document.getElementById("search-btn").addEventListener("click", () => {
+      // Collect all checked filters
+      const selected = [];
+      checkboxes.forEach(box => {
+        if (box.checked) selected.push(box.dataset.key);
+      });
+
+      // Build query string
+      const query = selected.length ? "?filters=" + selected.join(",") : "";
+      
+      // Redirect to results.html with selected filters
+      window.location.href = "results.html" + query;
+    });
+     const now = new Date();
+
+    // Calculate the day of the year
+    const start = new Date(now.getFullYear(), 0, 0); // Jan 0 = last day of previous year
+    const diff = now - start; // difference in milliseconds
+    const oneDay = 1000 * 60 * 60 * 24; // ms in one day
+    const dayOfYear = Math.floor(diff / oneDay);
+
+    // Get month name and day
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const month = monthNames[now.getMonth()];
+    const day = now.getDate();
+
+    // Create formatted string
+    const displayText = `${month} ${day} = Day ${dayOfYear} of the year`;
+
+    // Display it in the page
+    document.getElementById("product-code").textContent = displayText;
+  </script>
+</body>
+</html>

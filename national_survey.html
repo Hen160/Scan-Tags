@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scan Tags National Price Survey</title>
+  <style>
+    /* container stacks children vertically and centers them */
+    .nps {
+      display: flex;
+      flex-direction: column;
+      align-items: center;      /* center horizontally */
+      justify-content: flex-start;
+      width: 100%;
+      margin: 0 auto;
+      max-height: 90vh;
+      overflow-y: auto;         /* allow scrolling when many images */
+      padding: 20px 0;          /* breathing room top/bottom */
+      box-sizing: border-box;
+      background: #fff;
+    }
+
+    /* each image is a block, centered, with controlled width */
+    .nps img {
+      display: block;           /* remove inline spacing */
+      max-width: 600px;         /* control max size (adjust as needed) */
+      width: 90%;               /* responsive on small screens */
+      height: auto;
+      margin: 100px auto;        /* vertical spacing and center horizontally */
+      border-radius: 6px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    /* back arrow styling */
+    .back-arrow {
+      display: inline-block;
+      margin: 16px;
+      padding: 8px 12px;
+      background: white;
+      color: #03B185;
+      border-radius: 6px;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .back-arrow:hover { background:#f7f7f7; }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-arrow">&#129144;</a>
+
+  <div class="nps">
+    <!-- note: use relative paths (no leading slash) and encode spaces as %20 -->
+    <img class="scan_tag" src="./images/Export A 20 Pack.jpg">
+    <img class="scan_tag" src="./images/Export A 25 Pack.jpg">
+    <img class="scan_tag" src="./images/DuMaurier 20 Pack.jpg">
+    <img class="scan_tag" src="./images/DuMaurier 25 Pack.jpg">
+    <img class="scan_tag" src="./images/Belmont 25 Pack.jpg">
+    <img class="scan_tag" src="./images/MacDonald 20 Pack.jpg">
+    <img class="scan_tag" src="./images/MacDonald 25 pack.jpg">
+    <img class="scan_tag" src="./images/John Players 20 Pack.jpg">
+    <img class="scan_tag" src="./images/John Players 25 Pack.jpg">
+    <img class="scan_tag" src="./images/Marlboro 20 Pack.jpg">
+    <img class="scan_tag" src="./images/Marlboro 25 Pack.jpg">
+    <img class="scan_tag" src="./images/Canadian Classic 20 Pack.jpg">
+    <img class="scan_tag" src="./images/Canadian Classic 25 Pack.jpg">
+    <img class="scan_tag" src="./images/Next 20 Pack.jpg">
+    <img class="scan_tag" src="./images/Next 25 Pack.jpg">
+    <img class="scan_tag" src="./images/Pall Mall 20 Pack.jpg">
+    <img class="scan_tag" src="./images/Pall Mall 25 Pack.jpg">
+    <img class="scan_tag" src="./images/Phillip Morris 20 Pack.jpg">
+    <img class="scan_tag" src="./images/Phillip Morris 25 Pack.jpg">
+    <img class="scan_tag" src="./images/LD 20 Pack.jpg">
+    <img class="scan_tag" src="./images/LD 25 Pack.jpg">
+    <img class="scan_tag" src="./images/Camel 20 Pack.jpg">
+    <img class="scan_tag" src="./images/Camel Select 25 Pack.jpg">
+  </div>
+
+</body>
+</html>
