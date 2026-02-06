@@ -14,15 +14,12 @@
       z-index: 100;
     }
 
-    .top-bar {
+    .top-row {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 10px;
+      gap: 6px;
+      flex-wrap: wrap;
     }
-    
     .back-arrow {
       display: inline-block;
       margin-bottom: 20px;
@@ -35,17 +32,24 @@
       border-radius: 6px;
     }
 
+      .calc-label {
+      font-size: 11px;
+      font-weight: bold;
+      color: #333;
+      margin-right: 2px;
+    }
+
     .calc-input {
-      padding: 8px 12px;
-      font-size: 16px;
+      padding: 5px 6px;
+      font-size: 14px;
       border: 1px solid #ccc;
-      border-radius: 6px;
-      width: 160px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      border-radius: 4px;
+      width: 70px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     }
 
     .calc-input::placeholder {
-      font-size: 12px;
+      font-size: 9px;
     }
 
     .calc-input::-webkit-outer-spin-button,
@@ -60,15 +64,14 @@
     }
 
     .calc-btn {
-      padding: 8px 15px;
-      font-size: 16px;
+      padding: 5px 10px;
+      font-size: 12px;
       background: #03B185;
       color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 4px;
       cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      min-width: 100px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
     .calc-btn:hover {
@@ -76,20 +79,19 @@
     }
 
     .or-text {
-      font-size: 16px;
+      font-size: 11px;
       font-weight: bold;
       color: #666;
     }
 
     .result-display {
-      text-align: center;
-      font-size: 24px;
+      font-size: 16px;
       font-weight: bold;
       color: #03B185;
-      margin-bottom: 20px;
-      min-height: 30px;
+      margin-left: 6px;
+      min-width: 60px;
     }
-
+  
 
 img {
   display: block;            /* makes each image take up its own line */
@@ -119,26 +121,23 @@ img {
     }
     
 
-
+<a href="index.html" class="back-arrow">&#8592;</a>
   </style>
 </head>
 <body>
-<div class="header-section">
-    <a href="index.html" class="back-arrow">&#8592;</a>
-    <h2 style="text-align: center; color: #333; margin-bottom: 10px;">2 Pack Calculator</h2>
-    <div class="top-bar">
-    <input type="number" id="singlePackPrice" class="calc-input" placeholder="Single Pack Price" step="0.01">
-    <button class="calc-btn" id="x2Btn">x2</button>
-    <span class="or-text">OR</span>
-    <input type="number" id="discountInput" class="calc-input" placeholder="2 Pack Discount ie 1.25" step="0.01">
-    <button class="calc-btn" id="calculateBtn">Calculate</button>
+  <div class="header-section">
+    <div class="top-row">
+      <a href="index.html" class="back-arrow">&#8592;</a>
+      <span class="calc-label">2-Pack:</span>
+      <input type="number" id="singlePackPrice" class="calc-input" placeholder="Price" step="0.01">
+      <button class="calc-btn" id="x2Btn">x2</button>
+      <span class="or-text">OR</span>
+      <input type="number" id="discountInput" class="calc-input" placeholder="Discount" step="0.01">
+      <button class="calc-btn" id="calculateBtn">Calc</button>
+      <span class="result-display" id="resultDisplay"></span>
     </div>
-    <div class="result-display" id="resultDisplay"></div>
   </div>
 
-  <div id="image-container"></div>
-
-  <a href="index.html" class="back-arrow">&#8592;</a>
   
   <div id="image-container"></div>
 
@@ -214,6 +213,7 @@ img {
 
 </body>
 </html>
+
 
 
 
