@@ -5,6 +5,98 @@
   <meta charset="UTF-8">
   <title>Scan Tags National Price Survey</title>
   <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .header-section {
+      position: sticky;
+      top: 0;
+      background: white;
+      padding: 10px 0;
+      z-index: 100;
+    }
+ .back-arrow {
+      padding: 6px 10px;
+      background: white;
+      color: #03B185;
+      font-size: 24px;
+      text-decoration: none;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    
+  .calc-heading {
+      font-size: 12px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .calc-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .result-row {
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    .calc-input {
+      padding: 5px 6px;
+      font-size:16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 70px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .calc-input::placeholder {
+      font-size: 9px;
+    }
+
+    .calc-input::-webkit-outer-spin-button,
+    .calc-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .calc-input[type="number"] {
+      -moz-appearance: textfield;
+      appearance: textfield;
+    }
+
+    .calc-btn {
+      padding: 5px 10px;
+      font-size: 12px;
+      background: #03B185;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .calc-btn:hover {
+      background: #029973;
+    }
+
+    .or-text {
+      font-size: 11px;
+      font-weight: bold;
+      color: #666;
+    }
+
+    .result-display {
+      font-size: 16px;
+      font-weight: bold;
+      color: #03B185;
+    }
+
     /* container stacks children vertically and centers them */
     .nps {
       display: flex;
@@ -32,18 +124,7 @@
     }
 
     /* back arrow styling */
-    .back-arrow {
-      display: inline-block;
-      margin: 16px;
-      padding: 8px 12px;
-      background: white;
-      color: #03B185;
-      border-radius: 6px;
-      font-size: 30px;
-      text-decoration: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-    .back-arrow:hover { background:#f7f7f7; }
+
   </style>
 </head>
 <body>
@@ -83,6 +164,7 @@
 
 </body>
 </html>
+
 
 
 
