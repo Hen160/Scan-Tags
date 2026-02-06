@@ -128,8 +128,21 @@
   </style>
 </head>
 <body>
-
-  <a href="index.html" class="back-arrow">&#8592;</a>
+    <div class="header-section">
+    <a href="index.html" class="back-arrow">&#8592;</a>
+    <div class="calc-heading">2 Pack Calculator</div>
+    <div class="calc-row">
+      <input type="number" id="singlePackPrice" class="calc-input" placeholder="Single Price" step="0.01" inputmode="decimal">
+      <button class="calc-btn" id="x2Btn">x2</button>
+      <span class="or-text">OR</span>
+      <input type="number" id="discountInput" class="calc-input" placeholder="Discount" step="0.01" inputmode="decimal">
+      <button class="calc-btn" id="calculateBtn">Calc</button>
+    </div>
+    <div class="result-row">
+      <span class="result-display" id="resultDisplay"></span>
+    </div>
+  </div>
+  
 
   <div class="nps">
     <!-- note: use relative paths (no leading slash) and encode spaces as %20 -->
@@ -164,6 +177,7 @@
 
 </body>
 </html>
+
 
 
 
