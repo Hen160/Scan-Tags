@@ -20,17 +20,16 @@
       gap: 6px;
       flex-wrap: wrap;
     }
-    .back-arrow {
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 8px 15px;
+     .back-arrow {
+      padding: 4px 8px;
       background: white;
       color: #03B185;
-      font-size: 30px;
+      font-size: 20px;
       text-decoration: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-radius: 4px;
     }
+
 
       .calc-label {
       font-size: 11px;
@@ -128,8 +127,7 @@ img {
   <div class="header-section">
     <div class="top-row">
       <a href="index.html" class="back-arrow">&#8592;</a>
-      <span class="calc-label">2-Pack:</span>
-      <input type="number" id="singlePackPrice" class="calc-input" placeholder="Price" step="0.01">
+      <input type="number" id="singlePackPrice" class="calc-input" placeholder="Single Price" step="0.01">
       <button class="calc-btn" id="x2Btn">x2</button>
       <span class="or-text">OR</span>
       <input type="number" id="discountInput" class="calc-input" placeholder="Discount" step="0.01">
@@ -213,6 +211,7 @@ img {
 
 </body>
 </html>
+
 
 
 
