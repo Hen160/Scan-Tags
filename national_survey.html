@@ -174,9 +174,38 @@
     <img class="scan_tag" src="./images/Next Xtra 100%25 50g Pouch.jpg">
     <img class="scan_tag" src="./images/Canadian Classic 100%25 100g Tub.jpg">
   </div>
+  <script>
+  // Calculator functionality
+    const singlePackInput = document.getElementById("singlePackPrice");
+    const discountInput = document.getElementById("discountInput");
+    const resultDisplay = document.getElementById("resultDisplay");
 
+    document.getElementById("x2Btn").addEventListener("click", function() {
+      const singlePrice = parseFloat(singlePackInput.value);
+      if (!isNaN(singlePrice)) {
+        resultDisplay.textContent = "$" + (singlePrice * 2).toFixed(2);
+      } else {
+        resultDisplay.textContent = "Please enter a Single Pack Price";
+      }
+    });
+
+    document.getElementById("calculateBtn").addEventListener("click", function() {
+      const singlePrice = parseFloat(singlePackInput.value);
+      const discount = parseFloat(discountInput.value);
+
+      if (!isNaN(singlePrice) && !isNaN(discount)) {
+        const result = (singlePrice * 2) - discount;
+        resultDisplay.textContent = "$" + result.toFixed(2);
+      } else if (!isNaN(singlePrice)) {
+        resultDisplay.textContent = "$" + (singlePrice * 2).toFixed(2);
+      } else {
+        resultDisplay.textContent = "Please enter a Single Pack Price";
+      }
+    });
+  </script>
 </body>
 </html>
+
 
 
 
