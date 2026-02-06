@@ -13,29 +13,23 @@
       padding: 10px 0;
       z-index: 100;
     }
+ .back-arrow {
+      padding: 6px 10px;
+      background: white;
+      color: #03B185;
+      font-size: 24px;
+      text-decoration: none;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
 
-    .top-row {
+    .calc-row {
       display: flex;
       align-items: center;
       gap: 6px;
       flex-wrap: wrap;
-    }
-     .back-arrow {
-      padding: 4px 8px;
-      background: white;
-      color: #03B185;
-      font-size: 20px;
-      text-decoration: none;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      border-radius: 4px;
-    }
-
-
-      .calc-label {
-      font-size: 11px;
-      font-weight: bold;
-      color: #333;
-      margin-right: 2px;
     }
 
     .calc-input {
@@ -90,7 +84,6 @@
       margin-left: 6px;
       min-width: 60px;
     }
-  
 
 img {
   display: block;            /* makes each image take up its own line */
@@ -120,13 +113,14 @@ img {
     }
     
 
-<a href="index.html" class="back-arrow">&#8592;</a>
+
   </style>
 </head>
 <body>
+  
   <div class="header-section">
-    <div class="top-row">
-      <a href="index.html" class="back-arrow">&#8592;</a>
+    <a href="index.html" class="back-arrow">&#8592;</a>
+    <div class="calc-row">
       <input type="number" id="singlePackPrice" class="calc-input" placeholder="Single Price" step="0.01">
       <button class="calc-btn" id="x2Btn">x2</button>
       <span class="or-text">OR</span>
@@ -135,6 +129,7 @@ img {
       <span class="result-display" id="resultDisplay"></span>
     </div>
   </div>
+
 
   
   <div id="image-container"></div>
@@ -211,6 +206,7 @@ img {
 
 </body>
 </html>
+
 
 
 
