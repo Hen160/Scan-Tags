@@ -48,7 +48,7 @@
 
     .calc-input {
       padding: 5px 6px;
-      font-size: 14px;
+      font-size:16px;
       border: 1px solid #ccc;
       border-radius: 4px;
       width: 70px;
@@ -135,10 +135,10 @@ img {
     <a href="index.html" class="back-arrow">&#8592;</a>
     <div class="calc-heading">2 Pack Calculator</div>
     <div class="calc-row">
-      <input type="number" id="singlePackPrice" class="calc-input" placeholder="Single Price" step="0.01">
+      <input type="number" id="singlePackPrice" class="calc-input" placeholder="Single Price" step="0.01" inputmode="decimal">
       <button class="calc-btn" id="x2Btn">x2</button>
       <span class="or-text">OR</span>
-      <input type="number" id="discountInput" class="calc-input" placeholder="Discount" step="0.01">
+      <input type="number" id="discountInput" class="calc-input" placeholder="Discount" step="0.01" inputmode="decimal">
       <button class="calc-btn" id="calculateBtn">Calc</button>
     </div>
     <div class="result-row">
@@ -220,6 +220,7 @@ img {
 
 </body>
 </html>
+
 
 
 
